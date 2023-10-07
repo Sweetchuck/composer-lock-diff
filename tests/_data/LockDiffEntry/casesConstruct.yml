@@ -1,0 +1,166 @@
+added:
+    expected:
+        name: 'a/b'
+        requireAction: 'add'
+        requiredAsAction: 'prod'
+        versionAction: 'upgrade'
+        leftVersionString: ~
+        rightVersionString: '1.2.3'
+        versionFragmentChanged: 'major'
+        isVersionChanged: true
+        isVersionMajorChanged: true
+        isVersionMinorChanged: true
+        isVersionPatchChanged: true
+        isVersionPreReleaseChanged: true
+        isVersionMetadataChanged: true
+        leftRequiredAs: ~
+        rightRequiredAs: 'prod'
+        isLeftDirectDependency: ~
+        isRightDirectDependency: false
+    left: ~
+    right:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: false
+removed:
+    expected:
+        name: 'a/b'
+        requireAction: 'remove'
+        requiredAsAction: 'prod'
+        versionAction: 'downgrade'
+        leftVersionString: '1.2.3'
+        rightVersionString: ~
+        versionFragmentChanged: 'major'
+        isVersionChanged: true
+        isVersionMajorChanged: true
+        isVersionMinorChanged: true
+        isVersionPatchChanged: true
+        isVersionPreReleaseChanged: true
+        isVersionMetadataChanged: true
+        leftRequiredAs: 'prod'
+        rightRequiredAs: ~
+        isLeftDirectDependency: false
+        isRightDirectDependency: ~
+    left:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: false
+    right: ~
+changed.upgrade.major:
+    expected:
+        name: 'a/b'
+        requireAction: 'none'
+        requiredAsAction: 'prod'
+        versionAction: 'upgrade'
+        leftVersionString: '1.2.3'
+        rightVersionString: '4.5.6'
+        versionFragmentChanged: 'major'
+        isVersionChanged: true
+        isVersionMajorChanged: true
+        isVersionMinorChanged: true
+        isVersionPatchChanged: true
+        isVersionPreReleaseChanged: true
+        isVersionMetadataChanged: true
+        leftRequiredAs: 'prod'
+        rightRequiredAs: 'prod'
+        isLeftDirectDependency: true
+        isRightDirectDependency: true
+    left:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+    right:
+        name: 'a/b'
+        version: '4.5.6'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+changed.upgrade.minor:
+    expected:
+        name: 'a/b'
+        requireAction: 'none'
+        requiredAsAction: 'prod'
+        versionAction: 'upgrade'
+        leftVersionString: '1.2.3'
+        rightVersionString: '1.3.1'
+        versionFragmentChanged: 'minor'
+        isVersionChanged: true
+        isVersionMajorChanged: false
+        isVersionMinorChanged: true
+        isVersionPatchChanged: true
+        isVersionPreReleaseChanged: true
+        isVersionMetadataChanged: true
+        leftRequiredAs: 'prod'
+        rightRequiredAs: 'prod'
+        isLeftDirectDependency: true
+        isRightDirectDependency: true
+    left:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+    right:
+        name: 'a/b'
+        version: '1.3.1'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+changed.upgrade.branch:
+    expected:
+        name: 'a/b'
+        requireAction: 'none'
+        requiredAsAction: 'prod'
+        versionAction: 'upgrade'
+        leftVersionString: '1.2.3'
+        rightVersionString: '1.x-dev'
+        versionFragmentChanged: 'minor'
+        isVersionChanged: true
+        isVersionMajorChanged: false
+        isVersionMinorChanged: true
+        isVersionPatchChanged: true
+        isVersionPreReleaseChanged: true
+        isVersionMetadataChanged: true
+        leftRequiredAs: 'prod'
+        rightRequiredAs: 'prod'
+        isLeftDirectDependency: true
+        isRightDirectDependency: true
+    left:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+    right:
+        name: 'a/b'
+        version: '1.x-dev'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+changed.keep.prod-to-dev:
+    expected:
+        name: 'a/b'
+        requireAction: 'move'
+        requiredAsAction: 'dev'
+        versionAction: 'none'
+        leftVersionString: '1.2.3'
+        rightVersionString: '1.2.3'
+        versionFragmentChanged: ~
+        isVersionChanged: false
+        isVersionMajorChanged: false
+        isVersionMinorChanged: false
+        isVersionPatchChanged: false
+        isVersionPreReleaseChanged: false
+        isVersionMetadataChanged: false
+        leftRequiredAs: 'prod'
+        rightRequiredAs: 'dev'
+        isLeftDirectDependency: true
+        isRightDirectDependency: true
+    left:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'prod'
+        _isDirectDependency: true
+    right:
+        name: 'a/b'
+        version: '1.2.3'
+        _requiredAs: 'dev'
+        _isDirectDependency: true

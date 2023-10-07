@@ -1,0 +1,24 @@
+{
+    "vk/rk-dt": {
+        "requireAction": "none",
+        "requiredAsAction": "prod",
+        "versionAction": "none",
+        "name": "vk/rk-dt",
+        "type": "library",
+        "leftType": "library",
+        "rightType": "library",
+        "leftVersionString": "2.2.3",
+        "rightVersionString": "2.2.3",
+        "leftRequiredAs": "prod",
+        "rightRequiredAs": "prod",
+        "isLeftDirectDependency": false,
+        "isRightDirectDependency": true,
+        "versionFragmentChanged": null,
+        "isVersionChanged": false,
+        "isVersionMajorChanged": false,
+        "isVersionMinorChanged": false,
+        "isVersionPatchChanged": false,
+        "isVersionPreReleaseChanged": false,
+        "isVersionMetadataChanged": false
+    }
+}

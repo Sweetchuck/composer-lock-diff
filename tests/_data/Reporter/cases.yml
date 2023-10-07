@@ -1,0 +1,309 @@
+no-diff:
+    leftLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+    rightLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+    leftJson:
+        require:
+            'a/b': '^1.0'
+    rightJson:
+        require:
+            'a/b': '^1.0'
+basic:
+    leftLock:
+        packages:
+            -
+                name: 'vk/rk-dk'
+                version: '1.2.3'
+            -
+                name: 'vk/rk-dt'
+                version: '2.2.3'
+    rightLock:
+        packages:
+            -
+                name: 'vk/rk-dk'
+                version: '1.2.3'
+            -
+                name: 'vk/rk-dt'
+                version: '2.2.3'
+    leftJson:
+        require: {}
+    rightJson:
+        require:
+            vk/rk-dt: '^1.0'
+
+
+# Remaining test case variations:
+# 3 * 8 * 8 = 192
+# ---
+# eq = version keep
+# gt = version upgrade
+# lt = version downgrade
+# ---
+# np = required ----:prod
+# pp = required prod:prod
+# pd = required prod:dev
+# pn = required prod:----
+# nd = required ----:dev
+# dd = required  dev:dev
+# dp = required  dev:prod
+# dn = required  dev:----
+# ---
+# nd = ------:direct
+# dn = direct:direct
+# dc = direct:child
+# dn = direct:------
+# nd = ------:child
+# cd =  child:direct
+# cc =  child:child
+# dn =  child:------
+all-in-one:
+    leftLock:
+        packages:
+            -
+                name: 'eq/pp-dc'
+                version: '1.2.4'
+            -
+                name: 'eq/pp-cd'
+                version: '1.2.5'
+            -
+                name: 'eq/pd-dd'
+                version: '1.2.6'
+            -
+                name: 'eq/pd-dc'
+                version: '1.2.7'
+    rightLock:
+        packages:
+            -
+                name: 'eq/np-nd'
+                version: '1.2.3'
+            -
+                name: 'eq/np-nc'
+                version: '2.3.4'
+            -
+                name: 'eq/pp-dc'
+                version: '1.2.4'
+            -
+                name: 'eq/pp-cd'
+                version: '1.2.5'
+        packages-dev:
+            -
+                name: 'eq/pd-dd'
+                version: '1.2.6'
+            -
+                name: 'eq/pd-dc'
+                version: '1.2.7'
+
+    leftJson:
+        require:
+            eq/pp-dc: '^1.1'
+            eq/pd-dd: '^1.1'
+            eq/pd-dc: '^1.1'
+    rightJson:
+        require:
+            eq/np-nd: '^1.0'
+            eq/pp-cd: '^1.0'
+        require-dev:
+            eq/pd-dd: '^1.1'
+
+#########
+#    eq/np-nd
+#    eq/np-dd not-valid
+#    eq/np-dc not-valid
+#    eq/np-dn not-valid
+#    eq/np-nc
+#    eq/np-cc not-valid
+#    eq/np-cd not-valid
+#    eq/np-cn not-valid
+#    eq/pp-nd not-valid
+#    eq/pp-dd no-change
+#    eq/pp-dc
+#    eq/pp-dn not-valid
+#    eq/pp-nc not-valid
+#    eq/pp-cc no-change
+#    eq/pp-cd
+#    eq/pp-cn not-valid
+#    eq/pd-nd not-valid
+#    eq/pd-dd
+#########
+#    eq/pd-dc
+#
+#    eq/pd-dn
+#    eq/pd-nc
+#    eq/pd-cc
+#    eq/pd-cd
+#    eq/pd-cn
+#    eq/pn-nd
+#    eq/pn-dd
+#    eq/pn-dc
+#    eq/pn-dn
+#    eq/pn-nc
+#    eq/pn-cc
+#    eq/pn-cd
+#    eq/pn-cn
+#    eq/nd-nd
+#    eq/nd-dd
+#    eq/nd-dc
+#    eq/nd-dn
+#    eq/nd-nc
+#    eq/nd-cc
+#    eq/nd-cd
+#    eq/nd-cn
+#    eq/dd-nd
+#    eq/dd-dd
+#    eq/dd-dc
+#    eq/dd-dn
+#    eq/dd-nc
+#    eq/dd-cc
+#    eq/dd-cd
+#    eq/dd-cn
+#    eq/dp-nd
+#    eq/dp-dd
+#    eq/dp-dc
+#    eq/dp-dn
+#    eq/dp-nc
+#    eq/dp-cc
+#    eq/dp-cd
+#    eq/dp-cn
+#    eq/dn-nd
+#    eq/dn-dd
+#    eq/dn-dc
+#    eq/dn-dn
+#    eq/dn-nc
+#    eq/dn-cc
+#    eq/dn-cd
+#    eq/dn-cn
+#    gt/np-nd
+#    gt/np-dd
+#    gt/np-dc
+#    gt/np-dn
+#    gt/np-nc
+#    gt/np-cc
+#    gt/np-cd
+#    gt/np-cn
+#    gt/pp-nd
+#    gt/pp-dd
+#    gt/pp-dc
+#    gt/pp-dn
+#    gt/pp-nc
+#    gt/pp-cc
+#    gt/pp-cd
+#    gt/pp-cn
+#    gt/pd-nd
+#    gt/pd-dd
+#    gt/pd-dc
+#    gt/pd-dn
+#    gt/pd-nc
+#    gt/pd-cc
+#    gt/pd-cd
+#    gt/pd-cn
+#    gt/pn-nd
+#    gt/pn-dd
+#    gt/pn-dc
+#    gt/pn-dn
+#    gt/pn-nc
+#    gt/pn-cc
+#    gt/pn-cd
+#    gt/pn-cn
+#    gt/nd-nd
+#    gt/nd-dd
+#    gt/nd-dc
+#    gt/nd-dn
+#    gt/nd-nc
+#    gt/nd-cc
+#    gt/nd-cd
+#    gt/nd-cn
+#    gt/dd-nd
+#    gt/dd-dd
+#    gt/dd-dc
+#    gt/dd-dn
+#    gt/dd-nc
+#    gt/dd-cc
+#    gt/dd-cd
+#    gt/dd-cn
+#    gt/dp-nd
+#    gt/dp-dd
+#    gt/dp-dc
+#    gt/dp-dn
+#    gt/dp-nc
+#    gt/dp-cc
+#    gt/dp-cd
+#    gt/dp-cn
+#    gt/dn-nd
+#    gt/dn-dd
+#    gt/dn-dc
+#    gt/dn-dn
+#    gt/dn-nc
+#    gt/dn-cc
+#    gt/dn-cd
+#    gt/dn-cn
+#    lt/np-nd
+#    lt/np-dd
+#    lt/np-dc
+#    lt/np-dn
+#    lt/np-nc
+#    lt/np-cc
+#    lt/np-cd
+#    lt/np-cn
+#    lt/pp-nd
+#    lt/pp-dd
+#    lt/pp-dc
+#    lt/pp-dn
+#    lt/pp-nc
+#    lt/pp-cc
+#    lt/pp-cd
+#    lt/pp-cn
+#    lt/pd-nd
+#    lt/pd-dd
+#    lt/pd-dc
+#    lt/pd-dn
+#    lt/pd-nc
+#    lt/pd-cc
+#    lt/pd-cd
+#    lt/pd-cn
+#    lt/pn-nd
+#    lt/pn-dd
+#    lt/pn-dc
+#    lt/pn-dn
+#    lt/pn-nc
+#    lt/pn-cc
+#    lt/pn-cd
+#    lt/pn-cn
+#    lt/nd-nd
+#    lt/nd-dd
+#    lt/nd-dc
+#    lt/nd-dn
+#    lt/nd-nc
+#    lt/nd-cc
+#    lt/nd-cd
+#    lt/nd-cn
+#    lt/dd-nd
+#    lt/dd-dd
+#    lt/dd-dc
+#    lt/dd-dn
+#    lt/dd-nc
+#    lt/dd-cc
+#    lt/dd-cd
+#    lt/dd-cn
+#    lt/dp-nd
+#    lt/dp-dd
+#    lt/dp-dc
+#    lt/dp-dn
+#    lt/dp-nc
+#    lt/dp-cc
+#    lt/dp-cd
+#    lt/dp-cn
+#    lt/dn-nd
+#    lt/dn-dd
+#    lt/dn-dc
+#    lt/dn-dn
+#    lt/dn-nc
+#    lt/dn-cc
+#    lt/dn-cd
+#    lt/dn-cn
