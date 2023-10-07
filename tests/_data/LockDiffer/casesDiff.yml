@@ -1,0 +1,164 @@
+added:
+    expected:
+        a/b:
+            requireAction: 'add'
+            requiredAsAction: 'prod'
+            versionAction: 'upgrade'
+            name: 'a/b'
+            type: 'library'
+            leftType: 'library'
+            rightType: 'library'
+            leftVersionString: ~
+            rightVersionString: '1.0.0'
+            leftRequiredAs: null
+            rightRequiredAs: 'prod'
+            isLeftDirectDependency: null
+            isRightDirectDependency: null
+            versionFragmentChanged: 'major'
+            isVersionChanged: true
+            isVersionMajorChanged: true
+            isVersionMinorChanged: true
+            isVersionPatchChanged: true
+            isVersionPreReleaseChanged: true
+            isVersionMetadataChanged: true
+
+    leftLock: {}
+    rightLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.0.0'
+                _requiredAs: 'prod'
+removed:
+    expected:
+        a/b:
+            requireAction: 'remove'
+            requiredAsAction: 'prod'
+            versionAction: 'downgrade'
+            name: 'a/b'
+            type: 'library'
+            leftType: 'library'
+            rightType: 'library'
+            leftVersionString: '1.0.0'
+            rightVersionString: ~
+            leftRequiredAs: 'prod'
+            rightRequiredAs: null
+            isLeftDirectDependency: null
+            isRightDirectDependency: null
+            versionFragmentChanged: 'major'
+            isVersionChanged: true
+            isVersionMajorChanged: true
+            isVersionMinorChanged: true
+            isVersionPatchChanged: true
+            isVersionPreReleaseChanged: true
+            isVersionMetadataChanged: true
+    leftLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.0.0'
+    rightLock: {}
+changed.version:
+    expected:
+        a/b:
+            requireAction: 'none'
+            requiredAsAction: 'prod'
+            versionAction: 'upgrade'
+            name: 'a/b'
+            type: 'library'
+            leftType: 'library'
+            rightType: 'library'
+            leftVersionString: '1.0.0'
+            rightVersionString: '1.2.3'
+            leftRequiredAs: 'prod'
+            rightRequiredAs: 'prod'
+            isLeftDirectDependency: null
+            isRightDirectDependency: null
+            versionFragmentChanged: 'minor'
+            isVersionChanged: true
+            isVersionMajorChanged: false
+            isVersionMinorChanged: true
+            isVersionPatchChanged: true
+            isVersionPreReleaseChanged: true
+            isVersionMetadataChanged: true
+    leftLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.0.0'
+    rightLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+changed.moved-to-dev:
+    expected:
+        a/b:
+            requireAction: 'move'
+            requiredAsAction: 'dev'
+            versionAction: 'none'
+            name: 'a/b'
+            type: 'library'
+            leftType: 'library'
+            rightType: 'library'
+            leftVersionString: '1.2.3'
+            rightVersionString: '1.2.3'
+            leftRequiredAs: 'prod'
+            rightRequiredAs: 'dev'
+            isLeftDirectDependency: null
+            isRightDirectDependency: null
+            versionFragmentChanged: null
+            isVersionChanged: false
+            isVersionMajorChanged: false
+            isVersionMinorChanged: false
+            isVersionPatchChanged: false
+            isVersionPreReleaseChanged: false
+            isVersionMetadataChanged: false
+    leftLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+    rightLock:
+        packages-dev:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+changed.indirect-direct:
+    expected:
+        a/b:
+            requireAction: 'none'
+            requiredAsAction: 'prod'
+            versionAction: 'none'
+            name: 'a/b'
+            type: 'library'
+            leftType: 'library'
+            rightType: 'library'
+            leftVersionString: '1.2.3'
+            rightVersionString: '1.2.3'
+            leftRequiredAs: 'prod'
+            rightRequiredAs: 'prod'
+            isLeftDirectDependency: false
+            isRightDirectDependency: true
+            versionFragmentChanged: null
+            isVersionChanged: false
+            isVersionMajorChanged: false
+            isVersionMinorChanged: false
+            isVersionPatchChanged: false
+            isVersionPreReleaseChanged: false
+            isVersionMetadataChanged: false
+    leftLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+    rightLock:
+        packages:
+            -
+                name: 'a/b'
+                version: '1.2.3'
+    leftJson:
+        require: {}
+    rightJson:
+        require:
+            'a/b': '^1.0'

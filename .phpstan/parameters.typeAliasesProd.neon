@@ -1,0 +1,88 @@
+parameters:
+    typeAliases:
+        composer-lock-diff-version-fragment: '"major"|"minor"|"patch"|"preRelease"|"metadata"'
+        composer-lock-diff-json: '''
+            array{
+                name: string,
+                required?: array<string, string>,
+                required-dev?: array<string, string>,
+            }
+        '''
+        composer-lock-diff-json-full: '''
+            array{
+                name: string,
+                type: string,
+                version: string,
+                _requiredAs: "prod"|"dev",
+                _isDirectDependency: ?bool,
+            }
+        '''
+        composer-lock-diff-lock: '''
+            array{
+                packages?: array<string, composer-lock-diff-json-full>,
+                packages-dev?: array<string, composer-lock-diff-json-full>,
+            }
+        '''
+        composer-lock-diff-entry-require-action: '"none"|"add"|"remove"|"move"'
+        composer-lock-diff-entry-required-as-action: '"none"|"prod"|"dev"'
+        composer-lock-diff-entry-version-action: '"none"|"upgrade"|"downgrade"'
+        composer-lock-diff-entry-export: '''
+            array{
+                requireAction: composer-lock-diff-entry-require-action,
+                requiredAsAction: composer-lock-diff-entry-required-as-action,
+                versionAction: composer-lock-diff-entry-version-action,
+                name: string,
+                type: string,
+                leftType: string,
+                rightType: string,
+                leftVersionString: string,
+                rightVersionString: string,
+                leftRequiredAs: string,
+                rightRequiredAs: string,
+                isLeftDirectDependency: bool,
+                isRightDirectDependency: bool,
+                versionFragmentChanged: null|string,
+                isVersionChanged: bool,
+                isVersionMajorChanged: bool,
+                isVersionMinorChanged: bool,
+                isVersionPatchChanged: bool,
+                isVersionPreReleaseChanged: bool,
+                isVersionMetadataChanged: bool,
+            }
+        '''
+        composer-lock-diff-entry-comparer-prop-info: '''
+            array{
+                comparer?: ?callable,
+                default?: mixed,
+                direction?: -1|1,
+            }
+        '''
+        composer-lock-diff-entry-comparer-prop-info-full: '''
+            array{
+                key: array-key,
+                comparer: ?callable,
+                default: mixed,
+                direction: -1|1,
+            }
+        '''
+        composer-lock-diff-console-table-reporter-column-def: '''
+            array{
+                enabled: bool,
+                weight: int,
+                align: "left"|"center"|"right",
+                title: string,
+                config?: array<string, mixed>,
+            }
+        '''
+        composer-lock-diff-console-table-reporter-group-def: '''
+            array{
+                enabled: bool,
+                id: string,
+                title: string,
+                weight: int,
+                showEmpty: bool,
+                emptyContent: string,
+                filter: null|bool|callable,
+                comparer: null|callable,
+            }
+        '''

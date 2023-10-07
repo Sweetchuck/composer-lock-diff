@@ -1,0 +1,10 @@
++----------+--------+-------+-------------+-----------------+
+| Name     | Before | After | Required    | Direct          |
++----------+--------+-------+-------------+-----------------+
+| eq/np-nc |        | 2.3.4 | -    : prod | ?      : child  |
+| eq/np-nd |        | 1.2.3 | -    : prod | ?      : direct |
+| eq/pd-dc | 1.2.7  | 1.2.7 | prod : dev  | direct : child  |
+| eq/pd-dd | 1.2.6  | 1.2.6 | prod : dev  | direct : direct |
+| eq/pp-cd | 1.2.5  | 1.2.5 | prod : prod | child  : direct |
+| eq/pp-dc | 1.2.4  | 1.2.4 | prod : prod | direct : child  |
++----------+--------+-------+-------------+-----------------+
