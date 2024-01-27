@@ -237,11 +237,11 @@ abstract class TableReporterBase implements ReporterInterface
                     break;
 
                 case 'leftVersionString':
-                    $row[$colId] = $entry->leftVersionString;
+                    $row[$colId] = (string) $entry->leftVersionString;
                     break;
 
                 case 'rightVersionString':
-                    $row[$colId] = $entry->rightVersionString;
+                    $row[$colId] = (string) $entry->rightVersionString;
                     break;
 
                 case 'requiredAs':

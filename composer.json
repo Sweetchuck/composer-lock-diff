@@ -1,7 +1,7 @@
 {
     "type": "library",
     "name": "sweetchuck/composer-lock-diff",
-    "description": "Composer suite handler",
+    "description": "Generates a report about the diff between two composer.lock",
     "keywords": [],
     "authors": [
         {

@@ -41,6 +41,7 @@
                 "symfony/finder": "^6.0",
                 "symfony/yaml": "^6.3"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -3537,12 +3538,12 @@
             "version": "3.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
                 "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
                 "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
                 "shasum": ""
             },
@@ -3587,6 +3588,20 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCSStandards",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
             "time": "2023-02-22T23:07:41+00:00"
         },
         {
@@ -3618,8 +3633,7 @@
                 "nuvoleweb/robo-config": "^2.0",
                 "squizlabs/php_codesniffer": "^3.5",
                 "sweetchuck/robo-git": "2.x-dev",
-                "sweetchuck/robo-phpcs": "2.x-dev",
-                "sweetchuck/utils": "1.x-dev"
+                "sweetchuck/robo-phpcs": "2.x-dev"
             },
             "default-branch": true,
             "type": "composer-plugin",
@@ -3736,7 +3750,8 @@
             },
             "require": {
                 "consolidation/robo": "^4.0",
-                "php": ">=8.1",
+                "php": ">=8.2",
+                "sweetchuck/utils": "2.x-dev",
                 "symfony/filesystem": "^5.4 || ^6.0"
             },
             "require-dev": {
@@ -3748,7 +3763,6 @@
                 "squizlabs/php_codesniffer": "^3.6",
                 "sweetchuck/codeception-module-robo-task-runner": "3.x-dev",
                 "sweetchuck/git-hooks": "2.x-dev",
-                "sweetchuck/utils": "1.x-dev",
                 "symfony/debug": "^4.0 || ^5.0 || ^6.0",
                 "symfony/error-handler": "^5.2 || ^6.0",
                 "symfony/finder": "^5.2 || ^6.0",
@@ -3815,9 +3829,8 @@
                 "sweetchuck/codeception-module-robo-task-runner": "3.x-dev",
                 "sweetchuck/git-hooks": "2.x-dev",
                 "sweetchuck/robo-git": "3.x-dev",
-                "sweetchuck/utils": "1.x-dev",
                 "symfony/error-handler": "^6.2",
-                "symfony/yaml": "^4.0 || ^5.0 || ^6.0"
+                "symfony/yaml": "^5.0 || ^6.0"
             },
             "default-branch": true,
             "type": "robo-tasks",
@@ -3867,7 +3880,7 @@
             "require": {
                 "consolidation/robo": "^4.0",
                 "ext-mbstring": "*",
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/filesystem": "^5.0 || ^6.0"
             },
             "require-dev": {
@@ -3883,8 +3896,8 @@
                 "sweetchuck/git-hooks": "2.x-dev",
                 "sweetchuck/robo-git": "3.x-dev",
                 "sweetchuck/robo-phpcs": "3.x-dev",
-                "sweetchuck/utils": "1.x-dev",
-                "symfony/error-handler": "4.0 || ^5.0 || ^6.0",
+                "sweetchuck/utils": "2.x-dev",
+                "symfony/error-handler": "^5.0 || ^6.0",
                 "symfony/finder": "^5.0 || ^6.0",
                 "symfony/yaml": "^5.0 || ^6.0"
             },
